@@ -1,0 +1,25 @@
+name: CI Workflow
+
+# Triggers for the workflow
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:  # This allows you to manually trigger the workflow from the GitHub UI
+
+# Define the jobs that run when the workflow is triggered
+jobs:
+  build:
+    runs-on: self-hosted
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4  # Checkout your repository code
+
+    - name: Test the command
+      bash: shell
+      run: |
+        echo $(ls -la ./)
