@@ -7,6 +7,7 @@ on:
       test:
         required: false
         description: test
+        type: string
   push:
     branches:
       - main
