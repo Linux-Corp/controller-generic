@@ -3,6 +3,10 @@ name: CI Workflow
 # Triggers for the workflow
 on:
   workflow_call: # This makes the workflow reusable
+    inputs:
+      test:
+        required: false
+        description: test
   push:
     branches:
       - main
