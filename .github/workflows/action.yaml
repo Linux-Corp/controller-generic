@@ -2,6 +2,7 @@ name: CI Workflow
 
 # Triggers for the workflow
 on:
+  workflow_call: # This makes the workflow reusable
   push:
     branches:
       - main
