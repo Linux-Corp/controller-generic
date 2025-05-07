@@ -6,25 +6,39 @@
     <artifactId>java-maven</artifactId>
     <version>1.0.0</version>
     <dependencies>
+        <!-- Apache Commons Collections: Deserialization RCE -->
         <dependency>
-            <groupId>org.apache.struts</groupId>
-            <artifactId>struts2-core</artifactId>
-            <version>2.3.1</version> <!-- Remote Code Execution -->
+            <groupId>commons-collections</groupId>
+            <artifactId>commons-collections</artifactId>
+            <version>3.2.1</version>
         </dependency>
+
+        <!-- Log4j: Log4Shell RCE -->
         <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-core</artifactId>
-            <version>4.1.4.RELEASE</version> <!-- Deserialization vulnerability -->
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>2.14.0</version>
         </dependency>
+
+        <!-- Bouncy Castle: Information disclosure -->
+        <dependency>
+            <groupId>org.bouncycastle</groupId>
+            <artifactId>bcprov-jdk15on</artifactId>
+            <version>1.60</version>
+        </dependency>
+
+        <!-- Netty: HTTP request smuggling -->
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-codec-http</artifactId>
+            <version>4.1.42.Final</version>
+        </dependency>
+
+        <!-- FasterXML Jackson: Deserialization RCE -->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
-            <version>2.7.0</version> <!-- Deserialization vulnerability -->
-        </dependency>
-        <dependency>
-            <groupId>commons-beanutils</groupId>
-            <artifactId>commons-beanutils</artifactId>
-            <version>1.9.2</version> <!-- Arbitrary code execution -->
+            <version>2.7.0</version>
         </dependency>
     </dependencies>
 </project> 
