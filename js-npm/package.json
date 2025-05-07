@@ -1,0 +1,10 @@
+{
+    "name": "js-npm",
+    "version": "1.0.0",
+    "description": "Minimal Node.js project for Dependabot demo",
+    "main": "index.js",
+    "dependencies": {
+      "lodash": "4.17.19",
+      "express": "4.17.1"
+    }
+  } 
